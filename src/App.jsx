@@ -17,15 +17,43 @@ const App = () => {
     // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
+    
+    // 3D parallax scroll effect
+    const heroGridBg = document.querySelector('.hero-grid-bg');
+    const heroGlow = document.querySelector('.hero-glow');
+    const heroGlow2 = document.querySelector('.hero-glow2');
+    
     const handleScroll = () => {
+      const scrollY = window.scrollY;
+      
+      // Active nav link highlighting
       let cur = '';
       sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+        if (scrollY >= s.offsetTop - 120) cur = s.id;
       });
       navLinks.forEach(a => {
         a.style.color = a.getAttribute('href') === '#' + cur ? '#00e5ff' : '';
       });
+      
+      // 3D parallax effects
+      if (heroGridBg) {
+        const rotateX = Math.min(scrollY * 0.01, 5);
+        heroGridBg.style.transform = `perspective(1000px) rotateX(${rotateX}deg)`;
+      }
+      
+      if (heroGlow) {
+        const translateY1 = scrollY * 0.3;
+        const translateZ1 = Math.min(scrollY * 0.05, 50);
+        heroGlow.style.transform = `translate(-50%, calc(-50% + ${translateY1}px)) translateZ(${translateZ1}px)`;
+      }
+      
+      if (heroGlow2) {
+        const translateY2 = scrollY * 0.2;
+        const translateZ2 = Math.min(scrollY * 0.03, 30);
+        heroGlow2.style.transform = `translate(calc(-50% + ${translateY2}px), -50%) translateZ(${translateZ2}px)`;
+      }
     };
+    
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -143,6 +171,8 @@ const App = () => {
             linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
             linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
           background-size: 60px 60px;
+          transform: perspective(1000px) rotateX(2deg);
+          transition: transform 0.3s ease-out;
         }
 
         .hero-glow {
@@ -152,8 +182,10 @@ const App = () => {
           background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
           top: 50%;
           left: 60%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%) translateZ(0);
           pointer-events: none;
+          transition: transform 0.5s ease-out;
+          will-change: transform;
         }
 
         .hero-glow2 {
@@ -163,7 +195,10 @@ const App = () => {
           background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
           top: 30%;
           left: 20%;
+          transform: translateZ(0);
           pointer-events: none;
+          transition: transform 0.6s ease-out;
+          will-change: transform;
         }
 
         .hero-content {
