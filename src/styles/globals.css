@@ -734,6 +734,19 @@ section {
   color: #b09ed4;
 }
 
+/* Education Section */
+#education {
+  background: var(--bg);
+  padding: 5rem 3rem;
+  min-height: auto;
+}
+
+#education .edu-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
 /* Contact Section */
 #contact {
   background: var(--bg);
