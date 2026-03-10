@@ -747,6 +747,24 @@ section {
   transform: none !important;
 }
 
+/* Certifications Section */
+#certifications {
+  background: var(--surface);
+  padding: 5rem 3rem;
+  min-height: auto;
+}
+
+#certifications .cert-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+#certifications .certifications-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Contact Section */
 #contact {
   background: var(--bg);

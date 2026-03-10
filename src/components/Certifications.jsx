@@ -4,39 +4,54 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
+      title: "Java Full Stack Development",
+      issuer: "Kodnest",
+      date: "2023",
+      duration: "6 months",
+      credentialId: "KOD-JAVA-2023",
+      image: "☕",
+      skills: ["Java", "Spring Boot", "Hibernate", "REST APIs", "MySQL", "HTML/CSS/JS"],
+      verificationLink: "#"
+    },
+    {
+      id: 2,
       title: "Full Stack Web Development",
       issuer: "Coursera",
       date: "2024",
+      duration: "3 months",
       credentialId: "ABC123XYZ",
       image: "🏆",
       skills: ["React", "Node.js", "MongoDB", "Express.js"],
       verificationLink: "#"
     },
     {
-      id: 2,
+      id: 3,
       title: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
       date: "2023",
+      duration: "2 months",
       credentialId: "AWS-2023-456",
       image: "☁️",
       skills: ["AWS", "Cloud Computing", "Security", "Networking"],
       verificationLink: "#"
     },
     {
-      id: 3,
+      id: 4,
       title: "MongoDB Developer Associate",
       issuer: "MongoDB University",
       date: "2023",
+      duration: "1 month",
       credentialId: "MDB-DEV-789",
       image: "🍃",
       skills: ["MongoDB", "NoSQL", "Database Design", "Aggregation"],
       verificationLink: "#"
     },
     {
-      id: 4,
+      id: 5,
       title: "React Advanced Patterns",
       issuer: "Udemy",
       date: "2023",
+      duration: "2 months",
       credentialId: "UD-REACT-012",
       image: "⚛️",
       skills: ["React Hooks", "Redux", "Performance", "Testing"],
@@ -65,6 +80,7 @@ const Certifications = () => {
                 <div className="cert-meta">
                   <span className="cert-issuer">{cert.issuer}</span>
                   <span className="cert-date">{cert.date}</span>
+                  {cert.duration && <span className="cert-duration">{cert.duration}</span>}
                 </div>
               </div>
             </div>

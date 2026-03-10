@@ -14,6 +14,7 @@ const Education = () => {
         </div>
         <div className="edu-school">Computer Science and Engineering</div>
         <div className="edu-college">Bahubali College of Engineering</div>
+        <div className="edu-cgpa">CGPA: 7.8</div>
         <div className="edu-details">
           <p>Completed comprehensive studies in computer science fundamentals, software engineering principles, and advanced programming concepts. Gained hands-on experience with full-stack development, database management, and modern web technologies.</p>
           <div className="edu-highlights">
