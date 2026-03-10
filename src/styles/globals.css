@@ -89,6 +89,32 @@ nav:not(:has(.nav-brand)) .nav-container {
   justify-content: center;
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--purple);
+}
+
+.mobile-menu-toggle svg {
+  display: block;
+}
+
 .nav-brand {
   display: flex;
   align-items: center;
@@ -122,7 +148,7 @@ nav:not(:has(.nav-brand)) .nav-container {
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
 }
 
@@ -145,11 +171,12 @@ nav:not(:has(.nav-brand)) .nav-container {
   content: '';
   position: absolute;
   bottom: -4px;
-  left: 0;
+  right: 0;
   width: 0;
   height: 2px;
   background: var(--purple);
   transition: width 0.3s;
+  transform-origin: right center;
 }
 
 .nav-links a:hover {
@@ -157,7 +184,7 @@ nav:not(:has(.nav-brand)) .nav-container {
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+  width: 70%;
 }
 
 /* Sections */
@@ -324,7 +351,7 @@ section {
 
 .monitor-screen {
   width: 420px;
-  height: 280px;
+  height: 250px;
   background: #0d1117;
   border-radius: 10px 10px 0 0;
   border: 3px solid #30363d;
@@ -1002,11 +1029,56 @@ footer .footer-links a:hover {
 /* Responsive Design */
 @media (max-width: 900px) {
   nav {
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1.5rem;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
   }
 
   .nav-links {
-    gap: 1.2rem;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 180px;
+    height: 100vh;
+    background: rgba(5, 8, 22, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 0;
+    padding: 2rem;
+    padding-top: 4rem;
+    transition: right 0.3s ease;
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .nav-links-open {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    width: auto;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(145, 94, 255, 0.1);
+    border-color: var(--purple);
+    transform: none;
   }
 
   #hero {
@@ -1028,6 +1100,10 @@ footer .footer-links a:hover {
 
   .hero-tag {
     justify-content: center;
+  }
+
+  .hero-right {
+    display: none;
   }
 
   .hero-sub {
