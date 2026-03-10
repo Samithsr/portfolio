@@ -1,0 +1,401 @@
+/* Enhanced Experience Section Styles */
+
+/* Experience Timeline Container */
+.experience-timeline {
+  position: relative;
+  padding: 3rem 0;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Experience Items */
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* Timeline Dot */
+.exp-timeline-dot {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--card);
+  border: 3px solid var(--purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(145, 94, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.exp-timeline-dot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px rgba(145, 94, 255, 0.5);
+}
+
+.exp-logo {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Enhanced Experience Card */
+.exp-card-enhanced {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple), var(--teal));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.exp-card-enhanced:hover {
+  border-color: var(--purple);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(145, 94, 255, 0.25);
+}
+
+.exp-card-enhanced:hover::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced Header */
+.exp-header-enhanced {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exp-main-info {
+  flex: 1;
+}
+
+.exp-role-enhanced {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-family: 'Black Ops One', serif;
+  line-height: 1.2;
+}
+
+.exp-company-enhanced {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.exp-company-name {
+  font-size: 1.1rem;
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.exp-location {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.exp-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.exp-period-enhanced {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.exp-duration {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(145, 94, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(145, 94, 255, 0.3);
+}
+
+.exp-date {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-family: monospace;
+}
+
+.exp-type {
+  font-size: 0.8rem;
+  color: var(--teal);
+  background: rgba(0, 216, 214, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 216, 214, 0.3);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Experience Content Sections */
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.exp-section {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.exp-section:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(145, 94, 255, 0.2);
+}
+
+.exp-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Black Ops One', serif;
+}
+
+/* Responsibilities */
+.exp-responsibilities {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.exp-responsibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border-left: 3px solid var(--purple);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.exp-responsibility-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+  border-left-color: var(--teal);
+}
+
+.exp-bullet {
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* Enhanced Achievements */
+.achievements-enhanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.achievement-enhanced {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(145, 94, 255, 0.08), rgba(145, 94, 255, 0.02));
+  border: 1px solid rgba(145, 94, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.achievement-enhanced:hover {
+  background: linear-gradient(135deg, rgba(145, 94, 255, 0.12), rgba(145, 94, 255, 0.05));
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(145, 94, 255, 0.2);
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-top: 0.2rem;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.achievement-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Technologies Used */
+.tech-stack-used {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-used-item {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  color: var(--text);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-used-item:hover {
+  background: rgba(145, 94, 255, 0.1);
+  border-color: rgba(145, 94, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(145, 94, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .experience-timeline {
+    padding: 2rem 0;
+  }
+
+  .exp-card-enhanced {
+    padding: 2rem;
+  }
+
+  .exp-header-enhanced {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .exp-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .exp-period-enhanced {
+    align-items: flex-start;
+  }
+
+  .achievements-enhanced {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-role-enhanced {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-item {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .exp-timeline-dot {
+    width: 50px;
+    height: 50px;
+  }
+
+  .exp-logo {
+    font-size: 1.5rem;
+  }
+
+  .exp-card-enhanced {
+    padding: 1.5rem;
+  }
+
+  .exp-section {
+    padding: 1rem;
+  }
+
+  .exp-section-title {
+    font-size: 1rem;
+  }
+
+  .exp-responsibility-item {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .achievement-enhanced {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .achievement-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .tech-stack-used {
+    gap: 0.6rem;
+  }
+
+  .tech-used-item {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

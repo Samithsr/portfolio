@@ -1,10 +1,18 @@
 import React from 'react';
+import profileImage from '../assets/images/samithportfolio.jpg';
 
 const Hero = () => {
   return (
     <section id="hero">
       <div className="hero-content">
         <div className="hero-left">
+          <div className="hero-profile">
+            <img 
+              src={profileImage} 
+              alt="Samith S R" 
+              className="hero-profile-img"
+            />
+          </div>
           <p className="hero-tag">MERN Stack Developer</p>
           <h1 className="hero-name">Hi, I'm <span className="accent">Samith</span></h1>
           <p className="hero-sub">

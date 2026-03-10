@@ -174,6 +174,29 @@ section {
   z-index: 1;
 }
 
+/* Profile Image */
+.hero-profile {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--purple);
+  box-shadow: 0 0 30px rgba(145, 94, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(145, 94, 255, 0.5);
+}
+
 .hero-tag {
   font-size: 0.85rem;
   color: var(--muted);
@@ -947,6 +970,16 @@ footer .footer-links a:hover {
     padding: 6rem 1.5rem 3rem;
     text-align: center;
     gap: 3rem;
+  }
+
+  .hero-profile {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-profile-img {
+    width: 120px;
+    height: 120px;
   }
 
   .hero-tag {

@@ -1,6 +1,46 @@
 import React from 'react';
 
 const Experience = () => {
+  const experiences = [
+    {
+      id: 1,
+      role: "MERN Stack Developer",
+      company: "Sarayu Infotech Solution Pvt Ltd",
+      location: "Bangalore, India",
+      period: "Feb 2024 – Present",
+      duration: "2 Years",
+      type: "Full-time",
+      logo: "🏢",
+      responsibilities: [
+        "Designed, developed, and maintained full-stack MERN web applications for real-time industrial equipment monitoring",
+        "Contributed to system architecture ensuring scalable, efficient, and modular IoT-based solutions",
+        "Crafted responsive React-based dashboards with charts, graphs, and tabular reports",
+        "Built backend APIs with Node.js & Express.js handling real-time MQTT data ingestion",
+        "Integrated intelligent threshold-based alerting with automated email notifications",
+        "Implemented role-based access control for multi-organization support",
+        "Ensured scalable deployment using AWS and Docker for secure remote access"
+      ],
+      achievements: [
+        {
+          icon: "⚡",
+          title: "40% Performance Gain",
+          description: "Boosted real-time sensor data processing efficiency through optimized MQTT protocol integration"
+        },
+        {
+          icon: "🏆",
+          title: "Project Leadership",
+          description: "Led full-cycle development of MERN-based IoT monitoring platform across 3 industrial setups"
+        },
+        {
+          icon: "✅",
+          title: "85% Test Coverage",
+          description: "Improved API reliability by raising test coverage from 60% to 85% using Postman"
+        }
+      ],
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "MQTT", "AWS", "Docker"]
+    }
+  ];
+
   return (
     <section id="experience">
       <div className="reveal">
@@ -8,39 +48,73 @@ const Experience = () => {
         <h2 className="section-title">Where I've <span>Worked</span></h2>
       </div>
 
-      <div className="exp-card reveal">
-        <div className="exp-header">
-          <div>
-            <div className="exp-role">MERN Stack Developer</div>
-            <div className="exp-company">Sarayu Infotech Solution Pvt Ltd &nbsp;·&nbsp; Bangalore, India</div>
-          </div>
-          <span className="exp-period">Feb 2024 – Present · 2 Years</span>
-        </div>
+      <div className="experience-timeline">
+        {experiences.map((exp, index) => (
+          <div key={exp.id} className="experience-item reveal" style={{transitionDelay: `${index * 0.2}s`}}>
+            <div className="exp-timeline-dot">
+              <div className="exp-logo">{exp.logo}</div>
+            </div>
+            
+            <div className="exp-card-enhanced">
+              <div className="exp-header-enhanced">
+                <div className="exp-main-info">
+                  <h3 className="exp-role-enhanced">{exp.role}</h3>
+                  <div className="exp-company-enhanced">
+                    <span className="exp-company-name">{exp.company}</span>
+                    <span className="exp-location">📍 {exp.location}</span>
+                  </div>
+                </div>
+                <div className="exp-meta">
+                  <div className="exp-period-enhanced">
+                    <span className="exp-duration">{exp.duration}</span>
+                    <span className="exp-date">{exp.period}</span>
+                  </div>
+                  <span className="exp-type">{exp.type}</span>
+                </div>
+              </div>
 
-        <ul className="exp-list">
-          <li>Designed, developed, and maintained full-stack MERN web applications tailored for real-time industrial equipment monitoring.</li>
-          <li>Actively contributed to system architecture ensuring scalable, efficient, and modular solutions for IoT-based environments.</li>
-          <li>Crafted responsive React-based dashboards to visualize sensor data with charts, graphs, and tabular reports.</li>
-          <li>Built backend APIs with Node.js & Express.js handling real-time data ingestion via MQTT from remote IoT devices (vibration, voltage, temperature).</li>
-          <li>Integrated intelligent threshold-based alerting that triggers automated email notifications for proactive maintenance.</li>
-          <li>Built role-based access control with multi-organization support for wind turbines, dams, and remote stations.</li>
-          <li>Ensured scalable deployment using AWS and Docker for secure remote access to industrial operations.</li>
-        </ul>
+              <div className="exp-content">
+                <div className="exp-section">
+                  <h4 className="exp-section-title">🎯 Key Responsibilities</h4>
+                  <ul className="exp-responsibilities">
+                    {exp.responsibilities.map((resp, respIndex) => (
+                      <li key={respIndex} className="exp-responsibility-item">
+                        <span className="exp-bullet">▸</span>
+                        {resp}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-        <div className="achievements-grid" style={{marginTop: '2.5rem'}}>
-          <div className="achievement-item">
-            <h4>⚡ 40% Performance Gain</h4>
-            <p>Boosted real-time sensor data processing efficiency through optimized MQTT protocol integration.</p>
+                <div className="exp-section">
+                  <h4 className="exp-section-title">🏆 Key Achievements</h4>
+                  <div className="achievements-enhanced">
+                    {exp.achievements.map((achievement, achIndex) => (
+                      <div key={achIndex} className="achievement-enhanced">
+                        <div className="achievement-icon">{achievement.icon}</div>
+                        <div className="achievement-content">
+                          <h5 className="achievement-title">{achievement.title}</h5>
+                          <p className="achievement-desc">{achievement.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* <div className="exp-section"> */}
+                  {/* <h4 className="exp-section-title">🛠️ Technologies Used</h4> */}
+                  {/* <div className="tech-stack-used"> */}
+                    {/* {exp.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-used-item">
+                        {tech}
+                      </span>
+                    ))} */}
+                  {/* </div> */}
+                {/* </div> */}
+              </div>
+            </div>
           </div>
-          <div className="achievement-item">
-            <h4>🏆 Project Leadership</h4>
-            <p>Led full-cycle development of MERN-based IoT monitoring platform deployed across 3 distinct industrial setups.</p>
-          </div>
-          <div className="achievement-item">
-            <h4>✅ 85% Test Coverage</h4>
-            <p>Improved API reliability by raising test coverage from 60% to 85% using Postman, reducing production bugs.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
