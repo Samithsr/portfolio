@@ -83,6 +83,12 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
+/* When nav-brand is commented out, center the nav-links */
+nav:has(.nav-brand[style*="display: none"]) .nav-container,
+nav:not(:has(.nav-brand)) .nav-container {
+  justify-content: center;
+}
+
 .nav-brand {
   display: flex;
   align-items: center;
@@ -111,6 +117,13 @@ nav {
 
 .nav-brand-text strong {
   color: #fff;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .nav-links {
