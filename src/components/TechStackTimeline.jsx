@@ -53,6 +53,10 @@ const TechStackTimeline = () => {
         "EC2",
         "IAM CI/CD",
         "Docker",
+        "Linux",
+        "Bash Scripting",
+        "SSH",
+        "Vim/NeoVim",
         "GitHub",
         "Postman",
         "Git"

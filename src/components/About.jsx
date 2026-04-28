@@ -19,13 +19,17 @@ const About = () => {
           <div className="service-icon">⚙️</div>
           <div className="service-name">Backend Developer</div>
         </div>
+        <div className="service-card reveal" style={{transitionDelay:'0.15s'}}>
+          <div className="service-icon">🐧</div>
+          <div className="service-name">Linux</div>
+        </div>
         <div className="service-card reveal" style={{transitionDelay:'0.2s'}}>
           <div className="service-icon">📡</div>
           <div className="service-name">IoT Integration</div>
         </div>
         <div className="service-card reveal" style={{transitionDelay:'0.25s'}}>
-          <div className="service-icon">📨</div>
-          <div className="service-name">MQTT Protocol</div>
+          <div className="service-icon">�</div>
+          <div className="service-name">Docker</div>
         </div>
         <div className="service-card reveal" style={{transitionDelay:'0.3s'}}>
           <div className="service-icon">⚡</div>
@@ -34,6 +38,10 @@ const About = () => {
         <div className="service-card reveal" style={{transitionDelay:'0.35s'}}>
           <div className="service-icon">☁️</div>
           <div className="service-name">Cloud & DevOps</div>
+        </div>
+        <div className="service-card reveal" style={{transitionDelay:'0.4s'}}>
+          <div className="service-icon">📨</div>
+          <div className="service-name">MQTT Protocol</div>
         </div>
       </div>
     </section>
